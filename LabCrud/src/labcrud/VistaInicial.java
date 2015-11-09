@@ -42,6 +42,9 @@ public class VistaInicial extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         pendientesBtn = new javax.swing.JButton();
         listosBtn = new javax.swing.JButton();
+        promedioBtn = new javax.swing.JButton();
+        masBtn = new javax.swing.JButton();
+        todasBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         irAClientes = new javax.swing.JButton();
         ExamenesBtn = new javax.swing.JButton();
@@ -74,10 +77,31 @@ public class VistaInicial extends javax.swing.JFrame {
             }
         });
 
-        listosBtn.setText("Listos");
+        listosBtn.setText("Listas");
         listosBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listosBtnActionPerformed(evt);
+            }
+        });
+
+        promedioBtn.setText("Promedio");
+        promedioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                promedioBtnActionPerformed(evt);
+            }
+        });
+
+        masBtn.setText("Más de 2");
+        masBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                masBtnActionPerformed(evt);
+            }
+        });
+
+        todasBtn.setText("Todas");
+        todasBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                todasBtnActionPerformed(evt);
             }
         });
 
@@ -90,24 +114,30 @@ public class VistaInicial extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pendientesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(listosBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(listosBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(promedioBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(masBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pendientesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                    .addComponent(todasBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(15, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(pendientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addComponent(listosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(73, 73, 73))))
+                        .addComponent(todasBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pendientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(listosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(promedioBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(masBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Ir a:"));
@@ -254,6 +284,33 @@ public class VistaInicial extends javax.swing.JFrame {
        f.poblarTabla(select,VistaInicial.getTabla());
     }//GEN-LAST:event_listosBtnActionPerformed
 
+    private void promedioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_promedioBtnActionPerformed
+        // TODO add your handling code here:
+        Funciones f = new Funciones ();
+        String select = "select avg(numExams)\n" +
+        "from (select solicitud_id_solicitud,count(id_examen) as numExams\n" +
+        "from examenes\n" +
+        "group by solicitud_id_solicitud) t";
+        f.poblarTabla(select,VistaInicial.getTabla());
+    }//GEN-LAST:event_promedioBtnActionPerformed
+
+    private void masBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_masBtnActionPerformed
+        // TODO add your handling code here:
+        Funciones f = new Funciones ();
+        String select = "select solicitud_id_solicitud,count(id_examen) as numExams\n" +
+        "from examenes\n" +
+        "group by solicitud_id_solicitud\n" +
+        "having count(id_examen)>2";
+        f.poblarTabla(select,VistaInicial.getTabla());
+    }//GEN-LAST:event_masBtnActionPerformed
+
+    private void todasBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_todasBtnActionPerformed
+        // TODO add your handling code here:
+        Funciones f = new Funciones ();
+        String select = "select * from solicitud order by estado;";
+        f.poblarTabla(select,VistaInicial.getTabla()); 
+    }//GEN-LAST:event_todasBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -310,7 +367,10 @@ public class VistaInicial extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTable jTable1;
     private javax.swing.JButton listosBtn;
+    private javax.swing.JButton masBtn;
     private javax.swing.JButton pendientesBtn;
+    private javax.swing.JButton promedioBtn;
     private javax.swing.JButton solicitudesBtn;
+    private javax.swing.JButton todasBtn;
     // End of variables declaration//GEN-END:variables
 }

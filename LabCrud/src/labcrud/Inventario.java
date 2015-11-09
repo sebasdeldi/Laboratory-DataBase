@@ -44,7 +44,6 @@ public class Inventario extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         agregarCliente = new javax.swing.JButton();
         eliminarCliente = new javax.swing.JButton();
-        editarInventario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inventario");
@@ -98,13 +97,6 @@ public class Inventario extends javax.swing.JFrame {
             }
         });
 
-        editarInventario.setText("Editar");
-        editarInventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                editarInventarioActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -114,9 +106,7 @@ public class Inventario extends javax.swing.JFrame {
                 .addComponent(agregarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(104, 104, 104)
                 .addComponent(eliminarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(103, 103, 103)
-                .addComponent(editarInventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(41, 41, 41))
+                .addGap(256, 256, 256))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,8 +114,7 @@ public class Inventario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(agregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editarInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(eliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
 
@@ -164,13 +153,6 @@ public class Inventario extends javax.swing.JFrame {
         EliminarInventario eliminar = new EliminarInventario();
         eliminar.setVisible(true);
     }//GEN-LAST:event_eliminarClienteActionPerformed
-
-    private void editarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editarInventarioActionPerformed
-        // TODO add your handling code here:
-        EditarInventario editar = new EditarInventario();
-        editar.setVisible(true);
-        
-    }//GEN-LAST:event_editarInventarioActionPerformed
 
     public static javax.swing.JTable getTabla (){
         
@@ -221,7 +203,6 @@ public class Inventario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private static javax.swing.JTable TablaInventario;
     private javax.swing.JButton agregarCliente;
-    private javax.swing.JButton editarInventario;
     private javax.swing.JButton eliminarCliente;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
