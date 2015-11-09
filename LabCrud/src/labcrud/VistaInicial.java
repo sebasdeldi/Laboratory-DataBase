@@ -22,6 +22,9 @@ public class VistaInicial extends javax.swing.JFrame {
         Funciones f = new Funciones();
         f.conectarse();
         
+        
+        String select = "select * from solicitud order by estado;";
+        f.poblarTabla(select,VistaInicial.getTabla());   
     }
 
     /**
@@ -37,6 +40,8 @@ public class VistaInicial extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        pendientesBtn = new javax.swing.JButton();
+        listosBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         irAClientes = new javax.swing.JButton();
         ExamenesBtn = new javax.swing.JButton();
@@ -62,21 +67,47 @@ public class VistaInicial extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
+        pendientesBtn.setText("Pendientes");
+        pendientesBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pendientesBtnActionPerformed(evt);
+            }
+        });
+
+        listosBtn.setText("Listos");
+        listosBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listosBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pendientesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(listosBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(15, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(pendientesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(listosBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73))))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Ir a:"));
@@ -117,11 +148,11 @@ public class VistaInicial extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(irAClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
+                        .addComponent(irAClientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(104, 104, 104)
-                        .addComponent(ExamenesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
+                        .addComponent(ExamenesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(103, 103, 103)
-                        .addComponent(InventarioBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE))
+                        .addComponent(InventarioBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(solicitudesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(41, 41, 41))
         );
@@ -209,6 +240,20 @@ public class VistaInicial extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ExamenesBtnActionPerformed
 
+    private void pendientesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pendientesBtnActionPerformed
+       // TODO add your handling code here:
+       Funciones f = new Funciones();
+       String select = "select * from solicitud where estado = 'pendiente';";
+       f.poblarTabla(select,VistaInicial.getTabla());
+    }//GEN-LAST:event_pendientesBtnActionPerformed
+
+    private void listosBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listosBtnActionPerformed
+        // TODO add your handling code here:
+       Funciones f = new Funciones();
+       String select = "select * from solicitud where estado = 'listo';";
+       f.poblarTabla(select,VistaInicial.getTabla());
+    }//GEN-LAST:event_listosBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +294,11 @@ public class VistaInicial extends javax.swing.JFrame {
             }
         });
     }
+    
+     public static javax.swing.JTable getTabla (){
+        
+        return jTable1;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ExamenesBtn;
@@ -258,7 +308,9 @@ public class VistaInicial extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private static javax.swing.JTable jTable1;
+    private javax.swing.JButton listosBtn;
+    private javax.swing.JButton pendientesBtn;
     private javax.swing.JButton solicitudesBtn;
     // End of variables declaration//GEN-END:variables
 }

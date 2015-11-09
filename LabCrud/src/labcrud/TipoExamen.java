@@ -153,7 +153,7 @@ public class TipoExamen extends javax.swing.JFrame {
         Funciones f = new Funciones();
         Inmunologia t = new Inmunologia();
         t.setVisible(true);
-        String select = "SELECT * FROM descripcion_inmunilogia;";
+        String select = "SELECT * FROM descripcion_inmunologia;";
         f.poblarTabla(select,Inmunologia.getTabla());
     }//GEN-LAST:event_InmunologiaBtnActionPerformed
 

@@ -5,18 +5,19 @@
  */
 package labcrud;
 
+import com.sun.xml.internal.bind.v2.TODO;
 import static java.lang.Integer.parseInt;
 
 /**
  *
  * @author CARITO
  */
-public class AgregarInmunologia extends javax.swing.JFrame {
+public class AgregarExamenPedido extends javax.swing.JFrame {
 
     /**
-     * Creates new form AgregarEspeciales
+     * Creates new form AgregarExamenPedido
      */
-    public AgregarInmunologia() {
+    public AgregarExamenPedido() {
         initComponents();
     }
 
@@ -29,37 +30,29 @@ public class AgregarInmunologia extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        AgregarInventario = new javax.swing.JButton();
+        agregarCliente = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        textNombre = new javax.swing.JTextField();
-        textId = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        TextValor = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        textId = new javax.swing.JTextField();
+        textCedula = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agregar");
         setResizable(false);
 
-        AgregarInventario.setText("Agregar");
-        AgregarInventario.addActionListener(new java.awt.event.ActionListener() {
+        agregarCliente.setText("Agregar");
+        agregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AgregarInventarioActionPerformed(evt);
+                agregarClienteActionPerformed(evt);
             }
         });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Llenar datos"));
 
-        jLabel1.setText("Nombre del examen :");
+        jLabel3.setText("Id examen:");
 
-        jLabel2.setText("Id examen:");
-
-        textNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textNombreActionPerformed(evt);
-            }
-        });
+        jLabel4.setText("Id solicitud:");
 
         textId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,11 +60,9 @@ public class AgregarInmunologia extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Valor:");
-
-        TextValor.addActionListener(new java.awt.event.ActionListener() {
+        textCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TextValorActionPerformed(evt);
+                textCedulaActionPerformed(evt);
             }
         });
 
@@ -83,35 +74,27 @@ public class AgregarInmunologia extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addComponent(textCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(TextValor, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(14, 14, 14))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(10, 10, 10)
+                .addGap(17, 17, 17)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(textNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
                     .addComponent(textId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(TextValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(jLabel4)
+                    .addComponent(textCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -124,54 +107,79 @@ public class AgregarInmunologia extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AgregarInventario)
-                .addGap(171, 171, 171))
+                .addComponent(agregarCliente)
+                .addGap(157, 157, 157))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(AgregarInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(agregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void AgregarInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarInventarioActionPerformed
+    private void agregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteActionPerformed
         // TODO add your handling code here:
 
         Funciones f = new Funciones();
-        String nombre = textNombre.getText();
-        String IdTxt = textId.getText();
-        int id = parseInt(IdTxt);
-        String valorTx = TextValor.getText();
-        int valor = parseInt(valorTx);
         
-        String insert = "insert into descripcion_inmunologia (id_examen,nombre_examen,valor)\n" +
-        "value("+id+","+f.agregarComillas(nombre)+","+valor+");";
-        
-        f.agregar(insert, "descripcion_inmunologia");
-        
-        String select = "SELECT * FROM descripcion_inmunologia;";
-        f.poblarTabla(select,Inmunologia.getTabla());
+        String idTx = textId.getText();
+        int id = parseInt(idTx);
 
+        String idSolicitudTxt = textCedula.getText();
+        int idSolicitud = parseInt(idSolicitudTxt);
         
-    }//GEN-LAST:event_AgregarInventarioActionPerformed
+        String tipo = "";
+        
+        if (id%5 == 1){
+        
+            tipo = "hematologia";
+        }
+        else if(id%5 == 3){
+            tipo = "inmunologia";
+        }
+        else if (id%5 == 2){
+            tipo = "especiales";
+        }
+        else if (id%5 == 4){
+            tipo = "quimicas";
+        }
+        String insert1 = "insert into examenes (id_examen, solicitud_id_solicitud)\n" +
+        "select id_examen,"+idSolicitud+"\n" +
+        "from descripcion_"+tipo+"\n" +
+        "where descripcion_"+tipo+".id_examen = "+id+";";
+        
+        String insert = "insert into "+tipo+" (id_examen,valor,descripcion_"+tipo+"_id_examen,nombre,examenes_id_examen,examenes_solicitud_id_solicitud)\n" +
+        "select "+id+",valor,descripcion_"+tipo+".id_examen,nombre_examen,examenes.id_examen,examenes.solicitud_id_solicitud \n" +
+        "from descripcion_"+tipo+",examenes \n" +
+        "where descripcion_"+tipo+".id_examen = "+id+" and examenes.id_examen = "+id+" and solicitud_id_solicitud = "+idSolicitud+";";
+        
+        f.agregar(insert1,tipo);
+        f.agregar(insert,tipo);
+        
+       String select = " select examenes_solicitud_id_solicitud,id_examen,nombre,valor from inmunologia union all\n" +
+"                select examenes_solicitud_id_solicitud,id_examen,nombre,valor from quimicas union all\n" +
+"                select examenes_solicitud_id_solicitud,id_examen,nombre,valor from especiales union all\n" +
+"                select examenes_solicitud_id_solicitud,id_examen,nombre,valor from hematologia\n" +
+"                order by examenes_solicitud_id_solicitud;";
+       
+        
+        f.poblarTabla(select,ExamenesPedidos.getTabla());
 
-    private void textNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textNombreActionPerformed
+    }//GEN-LAST:event_agregarClienteActionPerformed
 
     private void textIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textIdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_textIdActionPerformed
 
-    private void TextValorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextValorActionPerformed
+    private void textCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textCedulaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TextValorActionPerformed
+    }//GEN-LAST:event_textCedulaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,33 +198,30 @@ public class AgregarInmunologia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AgregarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AgregarInmunologia().setVisible(true);
+                new AgregarExamenPedido().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AgregarInventario;
-    private javax.swing.JTextField TextValor;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton agregarCliente;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField textCedula;
     private javax.swing.JTextField textId;
-    private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables
 }

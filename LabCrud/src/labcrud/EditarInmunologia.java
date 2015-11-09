@@ -133,11 +133,11 @@ public class EditarInmunologia extends javax.swing.JFrame {
 
         // End of variables declaration
 
-        f.editar("UPDATE descripcion_inmunilogia\n" +
+        f.editar("UPDATE descripcion_inmunologia\n" +
             "SET valor= "+valor+"\n" +
-            "WHERE id_examen= "+id+";", "descripcion_inmunilogia");
+            "WHERE id_examen= "+id+";", "descripcion_inmunologia");
 
-        String select = "SELECT * FROM descripcion_inmunilogia;";
+        String select = "SELECT * FROM descripcion_inmunologia;";
         f.poblarTabla(select,Inmunologia.getTabla());
         System.out.println("actualizado satisfactoriamente");
 

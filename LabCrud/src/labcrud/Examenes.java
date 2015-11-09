@@ -106,6 +106,20 @@ public class Examenes extends javax.swing.JFrame {
 
     private void agregarBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarBtn1ActionPerformed
         // TODO add your handling code here:
+        Funciones f = new Funciones();
+        
+        ExamenesPedidos t = new ExamenesPedidos();
+        t.setVisible(true);
+        
+       String select = " select examenes_solicitud_id_solicitud,id_examen,nombre,valor from inmunologia union all\n" +
+"                select examenes_solicitud_id_solicitud,id_examen,nombre,valor from quimicas union all\n" +
+"                select examenes_solicitud_id_solicitud,id_examen,nombre,valor from especiales union all\n" +
+"                select examenes_solicitud_id_solicitud,id_examen,nombre,valor from hematologia\n" +
+"                order by examenes_solicitud_id_solicitud;";
+       
+        
+        f.poblarTabla(select,ExamenesPedidos.getTabla());
+        
     }//GEN-LAST:event_agregarBtn1ActionPerformed
 
     /**

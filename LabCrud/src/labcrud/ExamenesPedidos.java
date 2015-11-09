@@ -9,12 +9,12 @@ package labcrud;
  *
  * @author CARITO
  */
-public class Clientes extends javax.swing.JFrame {
+public class ExamenesPedidos extends javax.swing.JFrame {
 
     /**
-     * Creates new form Clientes
+     * Creates new form ExamenesPedidos
      */
-    public Clientes() {
+    public ExamenesPedidos() {
         initComponents();
     }
 
@@ -31,16 +31,13 @@ public class Clientes extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        agregarEP = new javax.swing.JButton();
-        eliminarEP = new javax.swing.JButton();
-        EditarEP = new javax.swing.JButton();
-        logButton = new javax.swing.JButton();
+        agregarCliente = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Clientes");
+        setTitle("Examenes pedidos");
         setResizable(false);
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Clientes"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Examenes pedidos"));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -59,46 +56,25 @@ public class Clientes extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 633, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(15, 15, 15)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Opciones "));
 
-        agregarEP.setText("Agregar");
-        agregarEP.addActionListener(new java.awt.event.ActionListener() {
+        agregarCliente.setText("Agregar");
+        agregarCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                agregarEPActionPerformed(evt);
-            }
-        });
-
-        eliminarEP.setText("Eliminar");
-        eliminarEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                eliminarEPActionPerformed(evt);
-            }
-        });
-
-        EditarEP.setText("Editar");
-        EditarEP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditarEPActionPerformed(evt);
-            }
-        });
-
-        logButton.setText("Log de modificaciones");
-        logButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                logButtonActionPerformed(evt);
+                agregarClienteActionPerformed(evt);
             }
         });
 
@@ -106,29 +82,17 @@ public class Clientes extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(41, 41, 41)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(logButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(agregarEP, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                        .addGap(104, 104, 104)
-                        .addComponent(eliminarEP, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
-                        .addGap(103, 103, 103)
-                        .addComponent(EditarEP, javax.swing.GroupLayout.DEFAULT_SIZE, 133, Short.MAX_VALUE)))
-                .addGap(41, 41, 41))
+                .addComponent(agregarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(487, 487, 487))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(agregarEP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(eliminarEP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(EditarEP, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(agregarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -147,7 +111,7 @@ public class Clientes extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -155,47 +119,26 @@ public class Clientes extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void agregarEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarEPActionPerformed
+    private void agregarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarClienteActionPerformed
         // TODO add your handling code here:
-        Agregar agregar = new Agregar();
+        
+        Funciones f = new Funciones ();
+        AgregarExamenPedido agregar = new AgregarExamenPedido();
         agregar.setVisible(true);
-    }//GEN-LAST:event_agregarEPActionPerformed
-
-    private void eliminarEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarEPActionPerformed
-        // TODO add your handling code here:
+        
+        String select = "select * from inmunologia union all\n"
+                + "select * from quimicas union all\n"
+                + "select * from especiales union all\n"
+                + "select * from hematologia \n"
+                + "order by examenes_solicitud_id_solicitud;";
        
         
-        EliminarCliente eliminar = new EliminarCliente();
-        eliminar.setVisible(true); 
-        
-    }//GEN-LAST:event_eliminarEPActionPerformed
+        f.poblarTabla(select,ExamenesPedidos.getTabla());
+    }//GEN-LAST:event_agregarClienteActionPerformed
 
-    private void EditarEPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarEPActionPerformed
-        // TODO add your handling code here:
-        EditarCliente editar = new EditarCliente();
-        editar.setVisible(true); 
-    }//GEN-LAST:event_EditarEPActionPerformed
-
-    private void logButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logButtonActionPerformed
-        // TODO add your handling code here:
-        Funciones f = new Funciones();
-        LogClientes lg = new LogClientes();
-        lg.setVisible(true);
-        String select = "select * from log_clientes;";
-        f.poblarTabla(select,LogClientes.getTabla());   
-    }//GEN-LAST:event_logButtonActionPerformed
-
- 
-    
-     public static javax.swing.JTable getTabla (){
-        
-        return jTable1;
-    }
     /**
      * @param args the command line arguments
      */
-    
-    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -210,32 +153,33 @@ public class Clientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExamenesPedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExamenesPedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExamenesPedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExamenesPedidos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Clientes().setVisible(true);
+                new ExamenesPedidos().setVisible(true);
             }
         });
     }
+     public static javax.swing.JTable getTabla (){
+        
+        return jTable1;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton EditarEP;
-    private javax.swing.JButton agregarEP;
-    private javax.swing.JButton eliminarEP;
+    private javax.swing.JButton agregarCliente;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTable jTable1;
-    private javax.swing.JButton logButton;
     // End of variables declaration//GEN-END:variables
 }

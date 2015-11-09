@@ -1,24 +1,26 @@
-package labcrud;
-
-import static java.lang.Integer.parseInt;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package labcrud;
+
+import static java.lang.Integer.parseInt;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 /**
  *
  * @author CARITO
  */
-public class EliminarInmunologia extends javax.swing.JFrame {
-
+public class EliminarExamenPedido extends javax.swing.JFrame {
+    
     /**
-     * Creates new form EliminarEspeciales
+     * Creates new form Eliminar
      */
-    public EliminarInmunologia() {
+    public EliminarExamenPedido() {
         initComponents();
+        
     }
 
     /**
@@ -97,29 +99,53 @@ public class EliminarInmunologia extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addComponent(Eliminarbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void idEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idEliminarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idEliminarActionPerformed
 
     private void EliminarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarbtnActionPerformed
         // TODO add your handling code here:
         Funciones f = new Funciones();
         String idTxt = idEliminar.getText();
         int id = parseInt(idTxt);
-
-        f.eliminar(id,"descripcion_inmunologia","id_examen");
-
-        String select = "SELECT * FROM descripcion_inmunologia;";
-        f.poblarTabla(select,Inmunologia.getTabla());
-        System.out.println("actualizado satisfactoriamente");
-
+        
+          String tipo = "";
+        
+        if (id%5 == 1){
+        
+            tipo = "hematologia";
+        }
+        else if(id%5 == 3){
+            tipo = "inmunologia";
+        }
+        else if (id%5 == 2){
+            tipo = "especiales";
+        }
+        else if (id%5 == 4){
+            tipo = "quimicas";
+        }
+        
+        
+        
+        f.eliminar(id, tipo ,"id_examen");
+        f.eliminar(id, "examenes" ,"id_examen");
+        
+        String select = "select * from inmunologia union all\n"
+                + "select * from quimicas union all\n"
+                + "select * from especiales union all\n"
+                + "select * from hematologia \n"
+                + "order by examenes_solicitud_id_solicitud;";
+       
+        
+        f.poblarTabla(select,ExamenesPedidos.getTabla());
+        
     }//GEN-LAST:event_EliminarbtnActionPerformed
-
-    private void idEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idEliminarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,21 +164,51 @@ public class EliminarInmunologia extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EliminarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EliminarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EliminarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarInmunologia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(EliminarExamenPedido.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EliminarInmunologia().setVisible(true);
+                new EliminarExamenPedido().setVisible(true);
             }
         });
     }
